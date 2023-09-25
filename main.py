@@ -495,7 +495,7 @@ df_assembly2 = df_assembly.groupby('placetemp').nth(0)
 
 df_assembly2['tweetcount'] = df_assembly["placetemp"].value_counts()
 df_assembly2 = df_assembly2.sort_values(by=['tweetcount'], ascending=False)
-df['tweetcount'].fillna(default_size, inplace=True) 
+df_assembly2['tweetcount'].fillna(default_size, inplace=True) 
 
 df_assembly3 = df_all.groupby('Username').nth(0)
 df_assembly3['tweetcount'] = df_all['Username'].value_counts()
