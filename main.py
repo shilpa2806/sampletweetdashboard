@@ -493,9 +493,8 @@ df_assembly2 = pd.DataFrame()
 df_assembly1 = df_assembly["place"].value_counts().rename_axis('citycount').reset_index(name='counts')
 df_assembly2 = df_assembly.groupby('placetemp').nth(0)
 
-df_assembly2['tweetcount'] = df_assembly["placetemp"].value_counts()
+df_assembly2['tweetcount'] = df_assembly["place"].value_counts()
 df_assembly2 = df_assembly2.sort_values(by=['tweetcount'], ascending=False)
-df_assembly2['tweetcount'].fillna(0, inplace=True)
 
 df_assembly3 = df_all.groupby('Username').nth(0)
 df_assembly3['tweetcount'] = df_all['Username'].value_counts()
